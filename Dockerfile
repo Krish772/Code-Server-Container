@@ -23,7 +23,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install a VS Code extension:
 COPY extensions.txt /tmp/extensions.txt
-RUN code-server --install-extension tuto193.monokai-vibrant --install-extension esbenp.prettier-vscode
+RUN code-server --install-extension tuto193.monokai-vibrant --install-extension esbenp.prettier-vscode --install-extension dbaeumer.vscode-eslint --install-extension vscode-icons-team.vscode-icons --install-extension oderwat.indent-rainbow --install-extension ritwickdey.LiveServer --install-extension CoenraadS.bracket-pair-colorizer-2 --install-extension jaspernorth.vscode-pigments
 # Install apt packages:
 RUN sudo apt install -y gcc g++
 
