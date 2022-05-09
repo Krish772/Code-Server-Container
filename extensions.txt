@@ -6,4 +6,3 @@ oderwat.indent-rainbow
 ritwickdey.LiveServer
 CoenraadS.bracket-pair-colorizer-2
 jaspernorth.vscode-pigments
-
