@@ -23,9 +23,13 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install a VS Code extension:
 COPY extensions.txt /tmp/extensions.txt
-RUN code-server --install-extension tuto193.monokai-vibrant --install-extension esbenp.prettier-vscode --install-extension dbaeumer.vscode-eslint --install-extension vscode-icons-team.vscode-icons --install-extension oderwat.indent-rainbow --install-extension ritwickdey.LiveServer --install-extension CoenraadS.bracket-pair-colorizer-2 --install-extension jaspernorth.vscode-pigments
+RUN code-server --install-extension tuto193.monokai-vibrant --install-extension esbenp.prettier-vscode --install-extension dbaeumer.vscode-eslint --install-extension vscode-icons-team.vscode-icons --install-extension oderwat.indent-rainbow --install-extension ritwickdey.LiveServer --install-extension jaspernorth.vscode-pigments
 # Install apt packages:
-RUN sudo apt install -y gcc g++
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - \
+&& sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
+&& sudo apt-get update
+
+RUN sudo apt install -y gcc g++ google-chrome-stable
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
