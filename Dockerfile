@@ -1,8 +1,6 @@
 # Start from the code-server Debian base image
 FROM codercom/code-server:4.4.0
-
 USER coder
-
 # Apply VS Code settings
 COPY deploy-container/settings.json .local/share/code-server/User/settings.json
 
@@ -25,8 +23,6 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
 RUN sudo chmod u+x vscode-extension-install.sh && vscode-extension-install.sh
-
-
 
 # Install apt packages:
 RUN sudo apt install -y gcc g++
