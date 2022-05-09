@@ -21,6 +21,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # -----------
 
 # Install a VS Code extension:
+COPY extensions.txt /tmp/extensions.txt
 COPY vscode-extension-install.sh /tmp/vscode-extension-install.sh
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
 RUN sudo chmod u+x /tmp/vscode-extension-install.sh
