@@ -27,7 +27,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 RUN code-server --install-extension esbenp.prettier-vscode
 
 # Install apt packages:
-RUN sudo apt-get install -y firfox-esr
+RUN sudo apt-get update && apt install -y firefox-esr
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
