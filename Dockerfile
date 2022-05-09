@@ -23,9 +23,9 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install a VS Code extension:
 COPY extensions.txt /tmp/extensions.txt
-RUN cat /tmp/extensions.txt | while read extension || [[ -n $extension ]];
-    do
-      code-server --install-extension $extension --force
+RUN cat /tmp/extensions.txt | while read extension || [[ -n $extension ]]; \
+    do \
+      code-server --install-extension $extension --force \
     done
 
 # Install apt packages:
